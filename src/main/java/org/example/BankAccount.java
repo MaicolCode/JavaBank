@@ -1,8 +1,11 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class BankAccount {
     private String accountNumber;
     private double balance;
+    ArrayList<String> transactionHistory = new ArrayList<>();
 
     // Creacion del constructor de la cuenta
     public BankAccount(String accountNumber, double balance){
@@ -15,6 +18,7 @@ public class BankAccount {
     public void deposit(double amount){
         balance += amount;
         System.out.println("Nuevo deposito realizado. Balance actual: "+balance+"$");
+        transactionHistory.add("Deposito de: "+amount);
     }
 
     public boolean withdrawals(double amount) {
@@ -23,6 +27,7 @@ public class BankAccount {
             return false;
         } else {
             balance -= amount;
+            transactionHistory.add("Retiro de: "+amount);
             System.out.println("El retiro a sido exitoso. Balance actualizado: "+balance+"$");
             return true;
         }

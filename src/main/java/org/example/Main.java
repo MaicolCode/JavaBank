@@ -9,10 +9,19 @@ public class Main {
         AuthenticateUser user = new AuthenticateUser(pin);
 
         if(user.authenticateUser("1234")){
-            account1.showBalance();
+
             account1.deposit(100);
             account1.withdrawals(12);
+
+            System.out.println("---------Historial de movimientos en la cuenta-----------");
+            for(String result : account1.transactionHistory){
+                System.out.println(result);
+            }
+            System.out.println("---------------------------------------------------------");
+            account1.showBalance();
+
         }
+
 
     }
 
