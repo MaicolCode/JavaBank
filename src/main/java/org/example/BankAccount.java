@@ -33,9 +33,7 @@ public class BankAccount {
         }
     }
 
-    public void showBalance() {
-        String state = (balance < 0)?"Deuda":"Credito";
-        System.out.println("Actualmente tiene un balance de "+balance+"$");
-        System.out.println("El estado de su cuenta es: "+state);
+    public double showBalance() {
+        return balance;
     }
 }
